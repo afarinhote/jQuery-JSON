@@ -1,0 +1,205 @@
+/*
+@font-face {
+    font-family: lato;
+    src:(https://fonts.googleapis.com/css?family=Lato)
+}*/
+
+html,
+body {
+  background-color: #FCF9E8;
+  font-family: lato;
+}
+
+/*Main Content*/
+
+.wrapper > div {
+  background: #A3B86C;
+  padding: 1em;
+}
+.wrapper > div:nth-child(odd) {
+  background: #B5C689;
+}
+.all {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+}
+.all > .choice {
+  grid-column: 1/2;
+}
+.all > .choice2 {
+  grid-column: 11/12;
+}
+
+.all > .wrapper {
+  grid-column: 2/11;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: minmax(100px, auto);
+  grid-auto-columns: (60px, auto);
+  margin: 30px 15px;
+}
+
+/*Match dimensions and positioning*/
+
+.one,
+.two {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+.unic {
+  display: grid;
+  grid-gap: 1em;
+  align-items: center;
+}
+.one > div,
+.two > div,
+.unic > div {
+  width: 100%;
+}
+.two > .on {
+  grid-row: 2;
+}
+.two > .tw {
+  grid-row: 3;
+}
+
+/*Other Main Content*/
+
+#floatText {
+  float: right;
+  bottom: 0;
+}
+
+.topText {
+  text-align: center;
+}
+
+.choice,
+.choice2 {
+  border: 3px #6AA4B7 solid;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0.5em;
+}
+.ui-state-default {
+  margin: auto;
+  width: 75%;
+  border-left: 1px #0C374D solid;
+  border-right: 1px #0C374D solid;
+  text-align: center;
+  cursor: pointer;
+}
+.group {
+  text-align: center;
+}
+.teamGame {
+  text-align: center;
+  background-color: coral;
+  border-radius: 4px;
+}
+.won {
+  background-color: green !important;
+  color: whitesmoke !important;
+}
+.thirdPlace {
+  background-color: yellowgreen !important;
+  color: whitesmoke !important;
+}
+.lost {
+  background-color: #D90429 !important;
+}
+.fourthPlace {
+  background-color: orangered !important;
+}
+div[id^="E-G"],
+div[id^="Q-G"] {
+  border-bottom: 1px black solid;
+}
+div[id$="T2"] {
+  border-bottom: none !important;
+}
+.hover {
+  background-color: yellowgreen !important;
+}
+img::selection,
+div::selection {
+  background: rgba(1, 1, 1, 0);
+}
+#crown {
+  padding: 0;
+  margin: 0;
+  width: 0.8em;
+}
+.podium {
+  width: 100%;
+  text-align: center;
+}
+.groupWon{
+  background: #56AEA3;
+}
+#first {
+  position: relative;
+  top: 20px;
+  height: 200px;
+  background-color: gold;
+  color: #0026ff;
+  grid-column: 6;
+  font-size: 150%;
+}
+#second {
+  position: relative;
+  top: 80px;
+  height: 140px;
+  background-color: silver;
+  grid-column: 5;
+}
+#third {
+  position: relative;
+  top: 120px;
+  height: 100px;
+  background-color: #cd7f32;
+  color: #327fcd;
+  grid-column: 7;
+}
+#podiumBronzeSad{
+  width: 10%;
+}
+/*NavBar*/
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-rows: auto;
+  padding-bottom: 25px;
+}
+.navbar > .login {
+  grid-column: 1;
+}
+.navbar > .save {
+  text-align: center;
+  grid-column: 2;
+}
+.navbar > .load {
+  text-align: center;
+  grid-column: 3;
+}
+.navbar > .reset {
+  text-align: center;
+  grid-column: 4;
+}
+.navbar > .greeting {
+  grid-column: 6/10;
+}
+img {
+  width: 90px;
+  padding: 2px;
+}
+#greetingText{
+  float: right;
+}

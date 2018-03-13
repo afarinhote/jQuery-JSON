@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="groupsApp">
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <title>FIFAWC Bets</title>
+    <link rel="icon" href="favicon.png"  type="image/png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/scriptAJS.js"></script>
+</head>
+
+<body ng-controller="groupCtrl">           
+    <div class="top">
+        <div class="navbar">
+            <div class="login">
+                <form id="#form">
+                    User:
+                    <br>
+                    <input type="text" name="name" placeholder="Username" id="user" required>
+                    <br> Password:
+                    <br>
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <br>
+                    <button type="submit" id="login">Log in</button>
+                </form>
+            </div>
+            <div class="save">
+                Save
+                <br>
+                <a href="">
+                    <img src="img/save.svg" alt="Save icon">
+                </a>
+            </div>
+            <div class="load">
+                Load
+                <br>
+                <a href="">
+                    <img src="img/down.svg" alt="Load icon">
+                </a>
+            </div>
+            <div class="reset">
+                Reset
+                <br>
+                <a href="">
+                    <img src="img/refre.svg" alt="Reset icon"> </a>
+            </div>
+            <div class="teamSelect">
+                Make Auto Selections
+                <br>
+                <a href="">
+                    <img src="img/populate.svg" alt="populate game fields"> </a>
+            </div>
+            <div class="greeting"><span id="greetingText">
+
+                <h2>Welcome to our FIFA World Cup Betting Tables</h2>
+                <p>First choose which teams win in their group by sorting them!</p>
+                <p>Secondly choose which ones win matches by passing them onto the next match.</p>
+                <p>Pro-tip! In the final matches double click to choose which one wins 1st place and create a podium! Do the same to the Third</p>
+
+
+            </span></div>
+        </div>
+    </div>
+
+    <div class="all">
+        <div class="choice">
+            <div class="group" ng-repeat="group in groups">
+
+
+                <strong id="title"> Group {{group.group}} </strong>
+                <div class="ui-state-default team"> {{group.team1}} </div>
+                <div class="ui-state-default team"> {{group.team2}} </div>
+                <div class="ui-state-default team"> {{group.team3}} </div>
+                <div class="ui-state-default team"> {{group.team4}} </div>
+            </div>
+        </div>
+        <div class="wrapper">
+
+            <div class="one">
+                <div class="on sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+                <div class="tw sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+                <div class="thre sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+                <div class="fou sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+
+            </div>
+
+            <div class="two">
+                <div class="on sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame quarters">&nbsp;</div>
+                    <div class="teamGame quarters">&nbsp;</div>
+                </div>
+                <div class="tw sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame quarters">&nbsp;</div>
+                    <div class="teamGame quarters">&nbsp;</div>
+                </div>
+
+            </div>
+
+            <div class="unic sorta">
+                <div class="on">
+                    <div class="teamGame mids">&nbsp;</div>
+                    <br>
+                    <div class="topText"> Match </div>
+                    <br>
+                    <div class="teamGame mids">&nbsp;</div>
+                </div>
+
+            </div>
+
+            <div class="two sorta">
+                <div class="on">
+                    <div class="teamGame finals">&nbsp;</div>
+                    <br>
+                    <div class="topText"> 1st Place Match </div>
+                    <br>
+                    <div class="teamGame finals">&nbsp;</div>
+                </div>
+                <div class="tw sorta">
+                    <div class="teamGame finals">&nbsp;</div>
+                    <br>
+                    <div class="topText"> 3rd Place Match </div>
+                    <br>
+                    <div class="teamGame finals">&nbsp;</div>
+                </div>
+            </div>
+
+            <div class="unic sorta">
+                <div class="on">
+                    <div class="teamGame mids">&nbsp;</div>
+                    <br>
+                    <div class="topText"> Match </div>
+                    <br>
+                    <div class="teamGame mids">&nbsp;</div>
+                </div>
+
+            </div>
+            <div class="two sorta">
+                <div class="on">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame quarters">&nbsp;</div>
+                    <div class="teamGame quarters">&nbsp;</div>
+                </div>
+                <div class="tw sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame quarters">&nbsp;</div>
+
+                    <div class="teamGame quarters">&nbsp;</div>
+                </div>
+
+            </div>
+
+            <div class="one">
+
+                <div class="on sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+                <div class="tw sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+                <div class="thre sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+                <div class="fou sorta">
+                    <div class="topText"> Match </div>
+                    <div class="teamGame eights">&nbsp;</div>
+                    <div class="teamGame eights">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="choice2">
+            <div class="group" ng-repeat="group2 in groups2">
+
+                <strong id="title"> Group {{group2.group}} </strong>
+                <div class="ui-state-default team"> {{group2.team1}} </div>
+                <div class="ui-state-default team"> {{group2.team2}} </div>
+                <div class="ui-state-default team"> {{group2.team3}} </div>
+                <div class="ui-state-default team"> {{group2.team4}} </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
